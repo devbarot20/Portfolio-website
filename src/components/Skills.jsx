@@ -96,7 +96,7 @@ export default function Skills() {
   const { ref: tagsRef,  inView: tagsIn  } = useScrollReveal();
 
   return (
-    <section id="skills" className="relative py-32 overflow-hidden">
+    <section id="skills" className="relative py-20 md:py-32 overflow-hidden">
       {/* bg orbs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.07] blur-[120px]"
@@ -110,7 +110,7 @@ export default function Skills() {
         {/* Heading */}
         <div ref={titleRef} className={`reveal ${titleIn ? 'in-view' : ''} text-center mb-16`}>
           <p className="section-label mb-3">// skills & expertise</p>
-          <h2 className="text-4xl md:text-[2.75rem] font-black mb-2">My Tech Stack</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-black mb-2">My Tech Stack</h2>
           <span className="section-line" />
           <p className="text-slate-400 mt-6 max-w-xl mx-auto text-[0.95rem]">
             A curated set of technologies I use to build modern, high-quality web applications.
@@ -118,7 +118,7 @@ export default function Skills() {
         </div>
 
         {/* Cards */}
-        <div ref={cardsRef} className="grid md:grid-cols-3 gap-5">
+        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {skillCategories.map((cat, i) => (
             <SkillCard key={cat.title} {...cat} inView={cardsIn} cardDelay={i + 1} />
           ))}

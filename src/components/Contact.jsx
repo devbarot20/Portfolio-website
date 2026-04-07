@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const info = [
-  { icon: '📧', title: 'Email',    value: 'alex.johnson@example.com', color: 'border-indigo-500/20 bg-indigo-500/5 text-indigo-400' },
+  { icon: '📧', title: 'Email',    value: 'dev.barot@example.com', color: 'border-indigo-500/20 bg-indigo-500/5 text-indigo-400' },
   { icon: '📍', title: 'Location', value: 'San Francisco, CA (Remote OK)', color: 'border-purple-500/20 bg-purple-500/5 text-purple-400' },
   { icon: '⏱️', title: 'Response', value: 'Usually within 24 hours',   color: 'border-emerald-500/20 bg-emerald-500/5 text-emerald-400' },
 ];
@@ -70,7 +70,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-32 overflow-hidden">
+    <section id="contact" className="relative py-20 md:py-32 overflow-hidden">
       {/* bg orbs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] rounded-full opacity-[0.07] blur-[120px]"
@@ -82,7 +82,7 @@ export default function Contact() {
         {/* Heading */}
         <div ref={titleRef} className={`reveal ${titleIn ? 'in-view' : ''} text-center mb-16`}>
           <p className="section-label mb-3">// get in touch</p>
-          <h2 className="text-4xl md:text-[2.75rem] font-black mb-2">Contact Me</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-black mb-2">Contact Me</h2>
           <span className="section-line" />
           <p className="text-slate-400 mt-6 max-w-xl mx-auto text-[0.95rem]">
             Have a project in mind or just want to say hi? My inbox is always open.
@@ -135,17 +135,17 @@ export default function Contact() {
             ref={rightRef}
             onSubmit={handleSubmit}
             id="contact-form"
-            className={`reveal-right ${rightIn ? 'in-view' : ''} glass-strong rounded-3xl p-8 border border-white/[0.07] space-y-5`}
+            className={`reveal-right ${rightIn ? 'in-view' : ''} glass-strong rounded-3xl p-6 sm:p-8 border border-white/[0.07] space-y-5`}
           >
             <h3 className="text-white font-semibold text-lg mb-6">Send a Message</h3>
 
             <InputField
               label="Your Name" id="name" value={form.name}
-              onChange={handleChange} placeholder="Alex Johnson" required
+              onChange={handleChange} placeholder="Dev Barot" required
             />
             <InputField
               label="Email Address" id="email" type="email" value={form.email}
-              onChange={handleChange} placeholder="alex@example.com" required
+              onChange={handleChange} placeholder="dev@example.com" required
             />
 
             <div>

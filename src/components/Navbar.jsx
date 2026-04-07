@@ -48,12 +48,21 @@ export default function Navbar() {
         <a
           href="#home"
           onClick={e => scroll(e, '#home')}
-          className="relative group font-bold text-base tracking-tight"
+          className="flex items-center gap-2.5 relative group"
         >
-          <span className="gradient-text font-mono text-lg">&lt;Dev</span>
-          <span className="text-white font-mono text-lg">Portfolio</span>
-          <span className="gradient-text font-mono text-lg"> /&gt;</span>
-          <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gradient-to-r from-indigo-400 to-purple-400 group-hover:w-full transition-all duration-300" />
+          {/* Emblem */}
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold tracking-tighter text-sm shadow-[0_0_15px_rgba(99,102,241,0.4)] group-hover:scale-105 group-hover:rotate-3 transition-all duration-300">
+            D<span className="text-indigo-200">B</span>
+          </div>
+          {/* Text */}
+          <div className="font-bold text-lg tracking-tight">
+            <span className="text-white relative">
+              Dev
+              <span className="absolute -bottom-0.5 left-0 w-0 h-[2px] bg-indigo-500 group-hover:w-full transition-all duration-300" />
+            </span>
+            <span className="text-slate-400 font-medium">Barot</span>
+            <span className="text-indigo-500">.</span>
+          </div>
         </a>
 
         {/* Desktop Links */}

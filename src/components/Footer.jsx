@@ -15,12 +15,17 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="text-center md:text-left">
-            <p className="font-mono font-bold text-lg">
-              <span className="gradient-text">&lt;Dev</span>
-              <span className="text-white">Portfolio</span>
-              <span className="gradient-text"> /&gt;</span>
-            </p>
-            <p className="text-slate-600 text-xs mt-1.5">Designed &amp; Built with ❤️ by Alex Johnson</p>
+            <div className="flex items-center justify-center md:justify-start gap-2.5 mb-1">
+              <div className="w-7 h-7 rounded-md bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold tracking-tighter text-xs shadow-lg shadow-indigo-500/20">
+                D<span className="text-indigo-200">B</span>
+              </div>
+              <div className="font-bold text-lg tracking-tight">
+                <span className="text-white">Dev</span>
+                <span className="text-slate-400 font-medium">Barot</span>
+                <span className="text-indigo-500">.</span>
+              </div>
+            </div>
+            <p className="text-slate-600 text-xs mt-1.5">Designed &amp; Built with ❤️ by Dev Barot</p>
           </div>
 
           {/* Nav links */}
@@ -39,7 +44,7 @@ export default function Footer() {
 
           {/* Copyright + back to top */}
           <div className="flex items-center gap-4">
-            <p className="text-slate-600 text-xs">© {year} Alex Johnson</p>
+            <p className="text-slate-600 text-xs">© {year} Dev Barot</p>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               aria-label="Back to top"

@@ -49,7 +49,7 @@ function ProjectCard({ id, title, description, tech, icon, gradient, border, hov
   return (
     <div
       id={`project-card-${id}`}
-      className={`reveal ${inView ? 'in-view' : ''} reveal-delay-${delay} group relative rounded-3xl p-7 bg-gradient-to-br ${gradient} border ${border} ${hover} card-hover flex flex-col h-full overflow-hidden`}
+      className={`reveal ${inView ? 'in-view' : ''} reveal-delay-${delay} group relative rounded-3xl p-5 sm:p-7 bg-gradient-to-br ${gradient} border ${border} ${hover} card-hover flex flex-col h-full overflow-hidden`}
     >
       {/* Hover glow top */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
@@ -120,14 +120,14 @@ export default function Projects() {
   const { ref: cardsRef, inView: cardsIn } = useScrollReveal();
 
   return (
-    <section id="projects" className="relative py-32 overflow-hidden">
+    <section id="projects" className="relative py-20 md:py-32 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at 80% 50%, rgba(168,85,247,0.07) 0%, transparent 60%)' }} />
 
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <div ref={titleRef} className={`reveal ${titleIn ? 'in-view' : ''} text-center mb-16`}>
           <p className="section-label mb-3">// featured work</p>
-          <h2 className="text-4xl md:text-[2.75rem] font-black mb-2">
+          <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-black mb-2">
             Projects
           </h2>
           <span className="section-line" />

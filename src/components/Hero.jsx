@@ -7,7 +7,7 @@ const roles = ['Frontend Developer', 'React Specialist', 'UI/UX Enthusiast', 'Op
 function TechBadge({ label, delay = 0, style = {} }) {
   return (
     <div
-      className="absolute px-3 py-1.5 rounded-xl glass-strong border border-indigo-500/20 text-xs font-mono text-indigo-300 animate-float select-none pointer-events-none"
+      className="hidden md:block absolute px-3 py-1.5 rounded-xl glass-strong border border-indigo-500/20 text-xs font-mono text-indigo-300 animate-float select-none pointer-events-none"
       style={{ animationDelay: `${delay}s`, ...style }}
     >
       {label}
@@ -84,9 +84,9 @@ export default function Hero() {
         </div>
 
         {/* Name */}
-        <h1 className={`reveal ${inView ? 'in-view' : ''} reveal-delay-1 text-5xl sm:text-6xl md:text-[5.5rem] font-black leading-[1.05] tracking-tight mb-5`}>
+        <h1 className={`reveal ${inView ? 'in-view' : ''} reveal-delay-1 text-4xl sm:text-6xl md:text-[5.5rem] font-black leading-[1.05] tracking-tight mb-5`}>
           Hi, I'm{' '}
-          <span className="gradient-text">Alex<br className="hidden sm:block" /> Johnson</span>
+          <span className="gradient-text">Dev<br className="hidden sm:block" /> Barot</span>
         </h1>
 
         {/* Typewriter */}
@@ -99,7 +99,7 @@ export default function Hero() {
         </div>
 
         {/* Tagline */}
-        <p className={`reveal ${inView ? 'in-view' : ''} reveal-delay-3 text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed mb-12`}>
+        <p className={`reveal ${inView ? 'in-view' : ''} reveal-delay-3 text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-12`}>
           I craft <span className="text-slate-200">beautiful</span>, performant, and accessible web
           experiences — turning complex ideas into elegant, user-friendly interfaces.
         </p>
