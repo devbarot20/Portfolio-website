@@ -13,7 +13,7 @@ const projects = [
     tag: 'Personal',
     tagCls: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20',
     github: 'https://github.com',
-    demo: 'https://example.com',
+    demo: 'https://portfolio-website-alpha-one-92.vercel.app/',
   },
   {
     id: 'ecommerce',
