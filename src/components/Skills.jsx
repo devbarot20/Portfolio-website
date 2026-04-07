@@ -4,55 +4,54 @@ const skillCategories = [
   {
     title: 'Languages',
     icon: '{ }',
-    color: 'from-blue-600/10 to-cyan-600/10',
+    bgBase: 'bg-white/[0.02]',
     border: 'border-blue-500/20',
     iconBg: 'bg-blue-500/10 border-blue-500/20 text-blue-400',
     accent: '#3b82f6',
     skills: [
-      { name: 'HTML5',      level: 95, icon: '🌐' },
-      { name: 'CSS3',       level: 90, icon: '🎨' },
-      { name: 'JavaScript', level: 85, icon: '⚡' },
-      { name: 'TypeScript', level: 70, icon: '🔷' },
+      { name: 'HTML5',      level: 95 },
+      { name: 'CSS3',       level: 90 },
+      { name: 'JavaScript', level: 85 },
+      { name: 'TypeScript', level: 70 },
     ],
   },
   {
     title: 'Frameworks & Libraries',
-    icon: '⚛',
-    color: 'from-indigo-600/10 to-purple-600/10',
+    icon: '<>',
+    bgBase: 'bg-white/[0.02]',
     border: 'border-indigo-500/20',
     iconBg: 'bg-indigo-500/10 border-indigo-500/20 text-indigo-400',
     accent: '#6366f1',
     skills: [
-      { name: 'React.js',    level: 88, icon: '⚛️' },
-      { name: 'Tailwind CSS',level: 92, icon: '💨' },
-      { name: 'Next.js',     level: 72, icon: '▲'  },
-      { name: 'Redux',       level: 75, icon: '🔄' },
+      { name: 'React.js',    level: 88 },
+      { name: 'Tailwind CSS',level: 92 },
+      { name: 'Next.js',     level: 72 },
+      { name: 'Redux',       level: 75 },
     ],
   },
   {
     title: 'Tools & Platforms',
-    icon: '🛠',
-    color: 'from-emerald-600/10 to-teal-600/10',
+    icon: '</>',
+    bgBase: 'bg-white/[0.02]',
     border: 'border-emerald-500/20',
     iconBg: 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400',
     accent: '#10b981',
     skills: [
-      { name: 'Git & GitHub', level: 88, icon: '🐙' },
-      { name: 'VS Code',      level: 95, icon: '💻' },
-      { name: 'Figma',        level: 78, icon: '🎯' },
-      { name: 'REST APIs',    level: 82, icon: '🔗' },
+      { name: 'Git & GitHub', level: 88 },
+      { name: 'VS Code',      level: 95 },
+      { name: 'Figma',        level: 78 },
+      { name: 'REST APIs',    level: 82 },
     ],
   },
 ];
 
 const tags = ['Responsive Design', 'Web Accessibility', 'Performance Optimization', 'SEO Basics', 'Agile/Scrum', 'Clean Code', 'Code Review', 'UI/UX Design'];
 
-function SkillBar({ name, level, icon, inView, delay }) {
+function SkillBar({ name, level, inView, delay }) {
   return (
     <div className={`reveal ${inView ? 'in-view' : ''} reveal-delay-${delay}`}>
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
-          <span>{icon}</span>
           <span className="text-sm font-medium text-slate-300">{name}</span>
         </div>
         <span className="font-mono text-[11px] text-slate-500 bg-white/5 px-2 py-0.5 rounded">{level}%</span>
@@ -67,12 +66,9 @@ function SkillBar({ name, level, icon, inView, delay }) {
   );
 }
 
-function SkillCard({ title, icon, color, border, iconBg, skills, inView, cardDelay }) {
+function SkillCard({ title, icon, bgBase, border, iconBg, skills, inView, cardDelay }) {
   return (
-    <div className={`reveal ${inView ? 'in-view' : ''} reveal-delay-${cardDelay} rounded-2xl p-6 bg-gradient-to-br ${color} border ${border} card-hover relative overflow-hidden`}>
-      {/* subtle inner glow */}
-      <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 50% -20%, rgba(99,102,241,0.08), transparent 70%)' }} />
+    <div className={`reveal ${inView ? 'in-view' : ''} reveal-delay-${cardDelay} rounded-2xl p-6 ${bgBase} border ${border} card-hover relative overflow-hidden`}>
 
       <div className="flex items-center gap-3 mb-7">
         <div className={`w-11 h-11 rounded-xl border flex items-center justify-center font-bold text-base ${iconBg}`}>
@@ -97,14 +93,6 @@ export default function Skills() {
 
   return (
     <section id="skills" className="relative py-20 md:py-32 overflow-hidden">
-      {/* bg orbs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.07] blur-[120px]"
-          style={{ background: 'radial-gradient(circle, #6366f1, transparent)' }} />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-[0.06] blur-[100px]"
-          style={{ background: 'radial-gradient(circle, #a855f7, transparent)' }} />
-      </div>
-
       <div className="max-w-6xl mx-auto px-6 md:px-10">
 
         {/* Heading */}

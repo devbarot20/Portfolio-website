@@ -6,8 +6,7 @@ const projects = [
     title: 'Portfolio Website',
     description: 'A modern personal portfolio showcasing projects and skills. Dark aesthetic with smooth animations, glassmorphism cards, and responsive layout.',
     tech: ['React', 'Tailwind CSS', 'Vite'],
-    icon: '🌐',
-    gradient: 'from-indigo-600/15 to-purple-600/15',
+    bgBase: 'bg-indigo-600/5',
     border: 'border-indigo-500/20',
     hover: 'hover:border-indigo-500/50',
     tag: 'Personal',
@@ -20,8 +19,7 @@ const projects = [
     title: 'E-Commerce UI',
     description: 'Feature-rich e-commerce frontend with product listings, cart management, filters, and responsive checkout flow with modern UX patterns.',
     tech: ['React', 'Redux', 'CSS Modules', 'REST API'],
-    icon: '🛍️',
-    gradient: 'from-emerald-600/15 to-teal-600/15',
+    bgBase: 'bg-emerald-600/5',
     border: 'border-emerald-500/20',
     hover: 'hover:border-emerald-500/50',
     tag: 'UI/UX',
@@ -34,8 +32,7 @@ const projects = [
     title: 'To-Do App',
     description: 'Productivity app with drag-and-drop task management, category filters, real-time updates, and local persistence via localStorage.',
     tech: ['React', 'Context API', 'Tailwind CSS'],
-    icon: '✅',
-    gradient: 'from-orange-600/15 to-rose-600/15',
+    bgBase: 'bg-orange-600/5',
     border: 'border-orange-500/20',
     hover: 'hover:border-orange-500/50',
     tag: 'Productivity',
@@ -45,26 +42,19 @@ const projects = [
   },
 ];
 
-function ProjectCard({ id, title, description, tech, icon, gradient, border, hover, tag, tagCls, github, demo, delay, inView }) {
+function ProjectCard({ id, title, description, tech, bgBase, border, hover, tag, tagCls, github, demo, delay, inView }) {
   return (
     <div
       id={`project-card-${id}`}
-      className={`reveal ${inView ? 'in-view' : ''} reveal-delay-${delay} group relative rounded-3xl p-5 sm:p-7 bg-gradient-to-br ${gradient} border ${border} ${hover} card-hover flex flex-col h-full overflow-hidden`}
+      className={`reveal ${inView ? 'in-view' : ''} reveal-delay-${delay} group relative rounded-3xl p-5 sm:p-7 ${bgBase} border ${border} ${hover} card-hover flex flex-col h-full overflow-hidden`}
     >
-      {/* Hover glow top */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-
-      <div className="flex items-start justify-between mb-5">
-        {/* Icon */}
-        <div className={`w-13 h-13 rounded-2xl glass flex items-center justify-center text-2xl border ${border} p-3`}>
-          {icon}
-        </div>
+      <div className="flex items-start justify-end mb-5">
         {/* Tag */}
         <span className={`text-xs font-semibold px-3 py-1 rounded-full border ${tagCls}`}>{tag}</span>
       </div>
 
       {/* Title */}
-      <h3 className="text-lg font-bold text-white mb-2.5 group-hover:gradient-text transition-all duration-300">{title}</h3>
+      <h3 className="text-lg font-bold text-white mb-2.5 group-hover:text-indigo-300 transition-all duration-300">{title}</h3>
 
       {/* Description */}
       <p className="text-slate-400 text-sm leading-relaxed flex-grow mb-5">{description}</p>
@@ -121,8 +111,6 @@ export default function Projects() {
 
   return (
     <section id="projects" className="relative py-20 md:py-32 overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at 80% 50%, rgba(168,85,247,0.07) 0%, transparent 60%)' }} />
 
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <div ref={titleRef} className={`reveal ${titleIn ? 'in-view' : ''} text-center mb-16`}>

@@ -1,17 +1,10 @@
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
-const stats = [
-  { value: '2+', label: 'Years of Experience', icon: '⏳' },
-  { value: '20+', label: 'Projects Completed', icon: '🚀' },
-  { value: '10+', label: 'Happy Clients', icon: '🤝' },
-  { value: '5★', label: 'Average Rating', icon: '⭐' },
-];
-
 const highlights = [
-  { icon: '⚛️', text: 'React & Next.js' },
-  { icon: '🎨', text: 'Pixel-perfect UI' },
-  { icon: '⚡', text: 'Performance first' },
-  { icon: '♿', text: 'Accessibility' },
+  { text: 'React & Next.js' },
+  { text: 'Pixel-perfect UI' },
+  { text: 'Performance first' },
+  { text: 'Accessibility' },
 ];
 
 export default function About() {
@@ -20,9 +13,6 @@ export default function About() {
 
   return (
     <section id="about" className="relative py-20 md:py-32 overflow-hidden">
-      {/* subtle orb */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] opacity-[0.06] blur-[100px] pointer-events-none rounded-full"
-        style={{ background: 'radial-gradient(ellipse, #6366f1, transparent)' }} />
 
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-2 gap-16 xl:gap-24 items-center">
@@ -40,7 +30,7 @@ export default function About() {
 
             {/* avatar card */}
             <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-3xl glass-strong border border-white/10 flex flex-col items-center justify-center glow">
-              <div className="text-7xl mb-3 animate-float" style={{ animationDelay: '0.5s' }}>👨‍💻</div>
+              <div className="text-[50px] font-bold text-slate-300 mb-3 animate-float" style={{ animationDelay: '0.5s' }}>DB</div>
               <p className="font-mono text-sm text-indigo-400">Dev Barot</p>
               <p className="text-xs text-slate-500 mt-1">Frontend Developer</p>
 
@@ -48,7 +38,7 @@ export default function About() {
               <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1 sm:gap-2 flex-wrap justify-center w-full px-2 sm:px-3">
                 {highlights.slice(0, 2).map(h => (
                   <span key={h.text} className="text-[10px] px-2 py-1 rounded-full glass border border-white/10 text-slate-400 whitespace-nowrap">
-                    {h.icon} {h.text}
+                    {h.text}
                   </span>
                 ))}
               </div>
@@ -56,10 +46,10 @@ export default function About() {
 
             {/* Floating badges */}
             <div className="absolute -top-6 -right-4 px-4 py-2 rounded-2xl glass-strong border border-emerald-500/25 text-emerald-400 text-xs font-semibold animate-float" style={{ animationDelay: '1s' }}>
-              ✦ Open to Work
+              Open to Work
             </div>
             <div className="absolute -bottom-6 -left-4 px-4 py-2 rounded-2xl glass-strong border border-purple-500/25 text-purple-400 text-xs font-semibold animate-float" style={{ animationDelay: '2.2s' }}>
-              ⚡ React Expert
+              React Expert
             </div>
           </div>
 
@@ -68,7 +58,7 @@ export default function About() {
             <p className="section-label mb-3">// about me</p>
             <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-black leading-tight mb-2">
               Crafting Digital<br />
-              <span className="gradient-text">Experiences</span>
+              {/* <span className="gradient-text">Experiences</span> */}
             </h2>
             <span className="section-line block mb-8 !mx-0" />
 
@@ -91,35 +81,24 @@ export default function About() {
 
             {/* Highlight chips */}
             <div className="flex flex-wrap gap-2 mt-7">
-              {highlights.map(({ icon, text }) => (
+              {highlights.map(({ text }) => (
                 <span
                   key={text}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-full glass border border-white/10 text-slate-300 text-xs font-medium hover:border-indigo-500/40 hover:text-indigo-300 transition-all duration-200"
                 >
-                  {icon} {text}
+                  {text}
                 </span>
               ))}
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-3 mt-8">
-              {stats.map(({ value, label, icon }, i) => (
-                <div
-                  key={label}
-                  className={`glass rounded-2xl p-4 border border-white/[0.07] card-hover reveal ${rightIn ? 'in-view' : ''} reveal-delay-${i + 1}`}
-                >
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-lg">{icon}</span>
-                    <span className="text-2xl font-black gradient-text">{value}</span>
-                  </div>
-                  <p className="text-xs text-slate-500 leading-snug">{label}</p>
-                </div>
-              ))}
-            </div>
+
 
             {/* Resume CTA */}
             <a
               href="/Dev_Barot_Resume.pdf"
+              download="Dev_Barot_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               id="download-cv-btn"
               className="inline-flex items-center gap-2.5 mt-8 px-6 py-3 rounded-full glass-strong border border-indigo-500/25 text-indigo-300 text-sm font-semibold hover:bg-indigo-500/10 hover:border-indigo-400/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all duration-300"
             >

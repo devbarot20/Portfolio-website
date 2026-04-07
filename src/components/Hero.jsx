@@ -46,30 +46,13 @@ export default function Hero() {
   return (
     <section id="home" ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden mesh-bg">
 
-      {/* ── Deep bg orbs ── */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full opacity-25 blur-[100px] animate-float-slow"
-          style={{ background: 'radial-gradient(circle, #4f46e5, transparent 70%)' }} />
-        <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full opacity-20 blur-[100px] animate-float-slow"
-          style={{ background: 'radial-gradient(circle, #9333ea, transparent 70%)', animationDelay: '3s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full opacity-[0.04] blur-3xl"
-          style={{ background: 'radial-gradient(circle, #818cf8, transparent)' }} />
-      </div>
-
-      {/* ── Dot grid ── */}
-      <div className="absolute inset-0 opacity-[0.06] pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(circle, rgba(129,140,248,0.8) 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-          maskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent)',
-        }}
-      />
+      {/* ── Background orbs & Grid removed ── */}
 
       {/* ── Floating tech labels ── */}
-      <TechBadge label="⚛ React.js" delay={0} style={{ top: '22%', left: '8%' }} />
-      <TechBadge label="💨 Tailwind" delay={1.2} style={{ top: '35%', right: '7%' }} />
-      <TechBadge label="⚡ Vite"    delay={2.1} style={{ bottom: '28%', left: '10%' }} />
-      <TechBadge label="🔷 TypeScript" delay={0.8} style={{ bottom: '22%', right: '8%' }} />
+      <TechBadge label="React.js" delay={0} style={{ top: '22%', left: '8%' }} />
+      <TechBadge label="Tailwind" delay={1.2} style={{ top: '35%', right: '7%' }} />
+      <TechBadge label="Vite"    delay={2.1} style={{ bottom: '28%', left: '10%' }} />
+      <TechBadge label="TypeScript" delay={0.8} style={{ bottom: '22%', right: '8%' }} />
 
       {/* ── Content ── */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-10 text-center">

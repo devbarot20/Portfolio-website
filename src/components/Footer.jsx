@@ -7,16 +7,13 @@ export default function Footer() {
 
   return (
     <footer className="relative border-t border-white/[0.06] pt-12 pb-8 mt-4">
-      {/* top glow line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" />
-
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
 
           {/* Brand */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2.5 mb-1">
-              <div className="w-7 h-7 rounded-md bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold tracking-tighter text-xs shadow-lg shadow-indigo-500/20">
+              <div className="w-7 h-7 rounded-md bg-indigo-600 flex items-center justify-center text-white font-bold tracking-tighter text-xs shadow-lg shadow-indigo-500/20">
                 D<span className="text-indigo-200">B</span>
               </div>
               <div className="font-bold text-lg tracking-tight">
@@ -25,7 +22,7 @@ export default function Footer() {
                 <span className="text-indigo-500">.</span>
               </div>
             </div>
-            <p className="text-slate-600 text-xs mt-1.5">Designed &amp; Built with ❤️ by Dev Barot</p>
+            <p className="text-slate-600 text-xs mt-1.5">Designed &amp; Built with care by Dev Barot</p>
           </div>
 
           {/* Nav links */}

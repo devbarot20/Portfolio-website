@@ -51,7 +51,7 @@ export default function Navbar() {
           className="flex items-center gap-2.5 relative group"
         >
           {/* Emblem */}
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold tracking-tighter text-sm shadow-[0_0_15px_rgba(99,102,241,0.4)] group-hover:scale-105 group-hover:rotate-3 transition-all duration-300">
+          <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold tracking-tighter text-sm shadow-[0_0_15px_rgba(99,102,241,0.4)] group-hover:scale-105 group-hover:rotate-3 transition-all duration-300">
             D<span className="text-indigo-200">B</span>
           </div>
           {/* Text */}

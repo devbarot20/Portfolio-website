@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const info = [
-  { icon: '📧', title: 'Email',    value: 'dev.barot@example.com', color: 'border-indigo-500/20 bg-indigo-500/5 text-indigo-400' },
-  { icon: '📍', title: 'Location', value: 'San Francisco, CA (Remote OK)', color: 'border-purple-500/20 bg-purple-500/5 text-purple-400' },
-  { icon: '⏱️', title: 'Response', value: 'Usually within 24 hours',   color: 'border-emerald-500/20 bg-emerald-500/5 text-emerald-400' },
+  { title: 'Email', value: 'dev.barot@example.com', color: 'border-indigo-500/20 bg-indigo-500/5 text-indigo-400' },
+  { title: 'Location', value: 'San Francisco, CA (Remote OK)', color: 'border-purple-500/20 bg-purple-500/5 text-purple-400' },
+  { title: 'Response', value: 'Usually within 24 hours', color: 'border-emerald-500/20 bg-emerald-500/5 text-emerald-400' },
 ];
 
 const socials = [
@@ -50,10 +50,10 @@ const InputField = ({ label, id, type = 'text', value, onChange, placeholder, re
 );
 
 export default function Contact() {
-  const [form, setForm]     = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('idle');
 
-  const { ref: leftRef,  inView: leftIn  } = useScrollReveal();
+  const { ref: leftRef, inView: leftIn } = useScrollReveal();
   const { ref: rightRef, inView: rightIn } = useScrollReveal();
   const { ref: titleRef, inView: titleIn } = useScrollReveal();
 
@@ -71,11 +71,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative py-20 md:py-32 overflow-hidden">
-      {/* bg orbs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] rounded-full opacity-[0.07] blur-[120px]"
-          style={{ background: 'radial-gradient(ellipse, #6366f1, transparent)' }} />
-      </div>
 
       <div className="max-w-6xl mx-auto px-6 md:px-10">
 
@@ -90,52 +85,13 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-start">
-
-          {/* Left: Info */}
-          <div ref={leftRef} className={`reveal-left ${leftIn ? 'in-view' : ''} space-y-4`}>
-            {/* Info items */}
-            <div className="glass-strong rounded-3xl p-6 border border-white/[0.07] space-y-4">
-              <h3 className="text-white font-semibold text-lg mb-5">Let's Connect</h3>
-              {info.map(({ icon, title, value, color }) => (
-                <div key={title} className={`flex items-center gap-4 p-3 rounded-xl border ${color}`}>
-                  <div className="text-xl w-9 text-center flex-shrink-0">{icon}</div>
-                  <div>
-                    <p className="text-[11px] uppercase tracking-widest text-slate-500 font-medium">{title}</p>
-                    <p className="text-slate-200 text-sm mt-0.5">{value}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Socials */}
-            <div className="glass-strong rounded-3xl p-6 border border-white/[0.07]">
-              <h3 className="text-white font-semibold mb-4">Find Me Online</h3>
-              <div className="flex flex-col gap-2">
-                {socials.map(({ name, id, href, icon, cls }) => (
-                  <a
-                    key={name}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    id={id}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-xl glass border border-white/[0.08] text-slate-400 text-sm font-medium transition-all duration-200 ${cls}`}
-                  >
-                    {icon}
-                    {name}
-                    <span className="ml-auto text-slate-700">→</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Right: Form */}
+        <div className="max-w-2xl mx-auto">
+          {/* Form */}
           <form
             ref={rightRef}
             onSubmit={handleSubmit}
             id="contact-form"
-            className={`reveal-right ${rightIn ? 'in-view' : ''} glass-strong rounded-3xl p-6 sm:p-8 border border-white/[0.07] space-y-5`}
+            className={`reveal ${rightIn ? 'in-view' : ''} glass-strong rounded-3xl p-6 sm:p-8 border border-white/[0.07] space-y-5`}
           >
             <h3 className="text-white font-semibold text-lg mb-6">Send a Message</h3>
 
@@ -168,11 +124,10 @@ export default function Contact() {
               id="contact-submit-btn"
               type="submit"
               disabled={status !== 'idle'}
-              className={`w-full relative overflow-hidden py-4 rounded-xl font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 ${
-                status === 'sent'
-                  ? 'bg-emerald-600/20 border border-emerald-500/40 text-emerald-400'
-                  : 'btn-primary text-white'
-              } disabled:cursor-not-allowed`}
+              className={`w-full relative overflow-hidden py-4 rounded-xl font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 ${status === 'sent'
+                ? 'bg-emerald-600/20 border border-emerald-500/40 text-emerald-400'
+                : 'btn-primary text-white'
+                } disabled:cursor-not-allowed`}
             >
               {status === 'sending' && (
                 <svg className="w-4 h-4 animate-spin relative z-10" fill="none" viewBox="0 0 24 24">
@@ -180,7 +135,7 @@ export default function Contact() {
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
                 </svg>
               )}
-              {status === 'sent' && <span className="text-lg">✅</span>}
+              {status === 'sent' && <span className="text-lg">✓</span>}
               <span className="relative z-10">
                 {status === 'sent' ? 'Message Sent! I\'ll get back to you soon.' : status === 'sending' ? 'Sending...' : 'Send Message →'}
               </span>
