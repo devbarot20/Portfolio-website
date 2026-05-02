@@ -1,4 +1,5 @@
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import profileImg from '../assets/profile.jpg';
 
 const highlights = [
   { text: 'React & Next.js' },
@@ -33,10 +34,12 @@ export default function About() {
             />
 
             {/* avatar card */}
-            <div className="relative z-10 w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-[#050505] border-4 border-[#1e293b] flex flex-col items-center justify-center shadow-[12px_12px_0px_#4f46e5]">
-              <div className="text-[60px] font-black text-white mb-2 animate-float" style={{ animationDelay: '0.5s', textShadow: '4px 4px 0px rgba(79, 70, 229, 0.4)' }}>DB</div>
-              <p className="font-mono font-bold text-sm text-[#4f46e5] uppercase tracking-widest bg-[#4f46e5] bg-opacity-10 px-3 py-1">Dev Barot</p>
-              <p className="text-xs font-bold text-slate-400 mt-2 uppercase tracking-wide">Frontend Developer</p>
+            <div className="relative z-10 w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-[#050505] border-4 border-[#1e293b] shadow-[12px_12px_0px_#4f46e5] overflow-hidden group">
+              <img 
+                src={profileImg} 
+                alt="Dev Barot" 
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110" 
+              />
 
               {/* highlight pills inside card bottom */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 flex-wrap justify-center w-full px-4">
