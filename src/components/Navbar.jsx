@@ -37,36 +37,36 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'glass shadow-2xl shadow-black/30 border-b border-white/[0.06]'
+          ? 'bg-[#050505] border-b-2 border-[#1e293b] shadow-xl'
           : 'bg-transparent'
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between gap-6">
+      <nav className="max-w-6xl mx-auto px-6 md:px-10 h-20 flex items-center justify-between gap-6">
         {/* Logo */}
         <a
           href="#home"
           onClick={e => scroll(e, '#home')}
-          className="flex items-center gap-2.5 relative group"
+          className="flex items-center gap-3 relative group"
         >
           {/* Emblem */}
-          <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold tracking-tighter text-sm shadow-[0_0_15px_rgba(99,102,241,0.4)] group-hover:scale-105 group-hover:rotate-3 transition-all duration-300">
-            D<span className="text-indigo-200">B</span>
+          <div className="w-10 h-10 bg-[#4f46e5] border-2 border-[#1e293b] flex items-center justify-center text-white font-black text-lg shadow-[4px_4px_0px_#1e293b] group-hover:shadow-[2px_2px_0px_#1e293b] group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all duration-200">
+            D<span className="text-[#050505]">B</span>
           </div>
           {/* Text */}
-          <div className="font-bold text-lg tracking-tight">
+          <div className="font-black text-xl tracking-tight uppercase">
             <span className="text-white relative">
               Dev
-              <span className="absolute -bottom-0.5 left-0 w-0 h-[2px] bg-indigo-500 group-hover:w-full transition-all duration-300" />
+              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-[#4f46e5] group-hover:w-full transition-all duration-300" />
             </span>
-            <span className="text-slate-400 font-medium">Barot</span>
-            <span className="text-indigo-500">.</span>
+            <span className="text-slate-400">Barot</span>
+            <span className="text-[#4f46e5]">.</span>
           </div>
         </a>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-1">
+        <ul className="hidden md:flex items-center gap-2">
           {navLinks.map(({ label, href }) => {
             const isActive = active === href.replace('#', '');
             return (
@@ -74,13 +74,10 @@ export default function Navbar() {
                 <a
                   href={href}
                   onClick={e => scroll(e, href)}
-                  className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    isActive ? 'text-white' : 'text-slate-400 hover:text-slate-200'
+                  className={`relative px-4 py-2 text-sm font-bold uppercase tracking-wider transition-all duration-200 border-2 border-transparent ${
+                    isActive ? 'text-white border-[#4f46e5] bg-[#4f46e5] bg-opacity-10' : 'text-slate-400 hover:text-white hover:border-[#1e293b]'
                   }`}
                 >
-                  {isActive && (
-                    <span className="absolute inset-0 rounded-lg bg-indigo-500/10 border border-indigo-500/20" />
-                  )}
                   <span className="relative">{label}</span>
                 </a>
               </li>
@@ -93,7 +90,7 @@ export default function Navbar() {
           href="#contact"
           onClick={e => scroll(e, '#contact')}
           id="navbar-hire-btn"
-          className="hidden md:flex items-center gap-2 px-5 py-2 rounded-full btn-primary text-white text-sm font-semibold"
+          className="hidden md:flex items-center gap-2 px-6 py-2.5 bg-[#4f46e5] border-2 border-[#4f46e5] text-white text-sm font-bold uppercase tracking-wider shadow-[4px_4px_0px_#1e293b] hover:shadow-[6px_6px_0px_#1e293b] hover:-translate-y-0.5 transition-all duration-200"
         >
           <span className="relative z-10">Hire Me</span>
           <span className="relative z-10 text-white/70">→</span>
@@ -104,46 +101,46 @@ export default function Navbar() {
           id="mobile-menu-btn"
           aria-label="Toggle navigation"
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-[5px] group"
+          className="md:hidden relative w-10 h-10 bg-[#0f111a] border-2 border-[#1e293b] flex flex-col items-center justify-center gap-[5px] group shadow-[4px_4px_0px_#1e293b] active:shadow-[0px_0px_0px_#1e293b] active:translate-y-1 active:translate-x-1"
         >
-          <span className={`w-5 h-0.5 rounded-full bg-slate-300 transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
-          <span className={`w-5 h-0.5 rounded-full bg-slate-300 transition-all duration-200 ${menuOpen ? 'opacity-0 scale-x-0' : ''}`} />
-          <span className={`w-5 h-0.5 rounded-full bg-slate-300 transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+          <span className={`w-5 h-0.5 bg-white transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+          <span className={`w-5 h-0.5 bg-white transition-all duration-200 ${menuOpen ? 'opacity-0 scale-x-0' : ''}`} />
+          <span className={`w-5 h-0.5 bg-white transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
         </button>
       </nav>
 
       {/* Mobile Drawer */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-400 ease-in-out border-t border-white/[0.06] ${
-          menuOpen ? 'max-h-72 opacity-100' : 'max-h-0 opacity-0'
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out border-b-2 border-[#1e293b] ${
+          menuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
         }`}
-        style={{ background: 'rgba(7,7,15,0.92)', backdropFilter: 'blur(24px)' }}
+        style={{ background: '#050505' }}
       >
-        <ul className="px-6 py-5 flex flex-col gap-1">
+        <ul className="px-6 py-6 flex flex-col gap-2">
           {navLinks.map(({ label, href }, i) => {
             const isActive = active === href.replace('#', '');
             return (
-              <li key={label} style={{ animationDelay: `${i * 60}ms` }}>
+              <li key={label} style={{ animationDelay: `${i * 50}ms` }}>
                 <a
                   href={href}
                   onClick={e => scroll(e, href)}
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
+                  className={`flex items-center gap-3 px-4 py-3 border-2 text-sm font-bold uppercase tracking-wider transition-all duration-200 ${
                     isActive
-                      ? 'text-indigo-300 bg-indigo-500/10'
-                      : 'text-slate-400 hover:text-white hover:bg-white/5'
+                      ? 'text-white border-[#4f46e5] bg-[#4f46e5] bg-opacity-10'
+                      : 'text-slate-400 border-transparent hover:text-white hover:bg-[#0f111a] hover:border-[#1e293b]'
                   }`}
                 >
-                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" />}
+                  {isActive && <span className="w-2 h-2 bg-[#4f46e5]" />}
                   {label}
                 </a>
               </li>
             );
           })}
-          <li className="mt-2">
+          <li className="mt-4">
             <a
               href="#contact"
               onClick={e => scroll(e, '#contact')}
-              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl btn-primary text-white text-sm font-semibold"
+              className="flex items-center justify-center gap-2 px-4 py-4 bg-[#4f46e5] border-2 border-[#4f46e5] text-white text-sm font-bold uppercase tracking-wider shadow-[4px_4px_0px_#1e293b]"
             >
               <span className="relative z-10">Hire Me →</span>
             </a>

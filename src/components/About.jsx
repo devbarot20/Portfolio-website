@@ -12,7 +12,7 @@ export default function About() {
   const { ref: rightRef, inView: rightIn } = useScrollReveal();
 
   return (
-    <section id="about" className="relative py-20 md:py-32 overflow-hidden">
+    <section id="about" className="relative py-24 md:py-32 overflow-hidden bg-[#0f111a] border-t-2 border-[#1e293b]">
 
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-2 gap-16 xl:gap-24 items-center">
@@ -22,22 +22,26 @@ export default function About() {
             ref={leftRef}
             className={`reveal-left ${leftIn ? 'in-view' : ''} flex justify-center relative`}
           >
-            {/* spinning orbit ring */}
+            {/* spinning square ring */}
             <div
-              className="absolute w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full border border-dashed border-indigo-500/20 animate-spin-slow"
-              style={{ animationDuration: '30s' }}
+              className="absolute w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 border-4 border-dashed border-[#334155] animate-spin-slow"
+              style={{ animationDuration: '40s' }}
+            />
+            <div
+              className="absolute w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 border-4 border-[#4f46e5] animate-spin-slow opacity-20"
+              style={{ animationDuration: '30s', animationDirection: 'reverse' }}
             />
 
             {/* avatar card */}
-            <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-3xl glass-strong border border-white/10 flex flex-col items-center justify-center glow">
-              <div className="text-[50px] font-bold text-slate-300 mb-3 animate-float" style={{ animationDelay: '0.5s' }}>DB</div>
-              <p className="font-mono text-sm text-indigo-400">Dev Barot</p>
-              <p className="text-xs text-slate-500 mt-1">Frontend Developer</p>
+            <div className="relative z-10 w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-[#050505] border-4 border-[#1e293b] flex flex-col items-center justify-center shadow-[12px_12px_0px_#4f46e5]">
+              <div className="text-[60px] font-black text-white mb-2 animate-float" style={{ animationDelay: '0.5s', textShadow: '4px 4px 0px rgba(79, 70, 229, 0.4)' }}>DB</div>
+              <p className="font-mono font-bold text-sm text-[#4f46e5] uppercase tracking-widest bg-[#4f46e5] bg-opacity-10 px-3 py-1">Dev Barot</p>
+              <p className="text-xs font-bold text-slate-400 mt-2 uppercase tracking-wide">Frontend Developer</p>
 
               {/* highlight pills inside card bottom */}
-              <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1 sm:gap-2 flex-wrap justify-center w-full px-2 sm:px-3">
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 flex-wrap justify-center w-full px-4">
                 {highlights.slice(0, 2).map(h => (
-                  <span key={h.text} className="text-[10px] px-2 py-1 rounded-full glass border border-white/10 text-slate-400 whitespace-nowrap">
+                  <span key={h.text} className="text-[10px] font-bold px-2 py-1 bg-[#1e293b] border-2 border-[#334155] text-white uppercase tracking-wider">
                     {h.text}
                   </span>
                 ))}
@@ -45,33 +49,32 @@ export default function About() {
             </div>
 
             {/* Floating badges */}
-            <div className="absolute -top-6 -right-4 px-4 py-2 rounded-2xl glass-strong border border-emerald-500/25 text-emerald-400 text-xs font-semibold animate-float" style={{ animationDelay: '1s' }}>
+            <div className="absolute -top-6 -right-4 px-4 py-2 bg-[#10b981] border-2 border-[#050505] text-white text-xs font-bold uppercase tracking-wider shadow-[4px_4px_0px_#050505] animate-float z-20" style={{ animationDelay: '1s' }}>
               Open to Work
             </div>
-            <div className="absolute -bottom-6 -left-4 px-4 py-2 rounded-2xl glass-strong border border-purple-500/25 text-purple-400 text-xs font-semibold animate-float" style={{ animationDelay: '2.2s' }}>
+            <div className="absolute -bottom-6 -left-4 px-4 py-2 bg-[#9333ea] border-2 border-[#050505] text-white text-xs font-bold uppercase tracking-wider shadow-[4px_4px_0px_#050505] animate-float z-20" style={{ animationDelay: '2.2s' }}>
               React Expert
             </div>
           </div>
 
           {/* ── Right: Content ── */}
           <div ref={rightRef} className={`reveal-right ${rightIn ? 'in-view' : ''}`}>
-            <p className="section-label mb-3">// about me</p>
-            <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-black leading-tight mb-2">
-              Crafting Digital<br />
-              {/* <span className="gradient-text">Experiences</span> */}
+            <p className="section-label mb-4">ABOUT ME</p>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter leading-tight mb-6 text-white">
+              Crafting Bold<br />
+              <span className="text-[#4f46e5]" style={{ textShadow: '4px 4px 0px rgba(79, 70, 229, 0.2)' }}>Experiences</span>
             </h2>
-            <span className="section-line block mb-8 !mx-0" />
 
-            <div className="space-y-4 text-slate-400 leading-relaxed text-[0.95rem]">
+            <div className="space-y-6 text-slate-400 leading-relaxed text-[1rem] font-medium">
               <p>
-                I'm <span className="text-white font-semibold">Dev Barot</span>, a passionate Frontend
+                I'm <span className="text-white font-bold bg-[#1e293b] px-2">Dev Barot</span>, a passionate Frontend
                 Developer with 2+ years of experience building modern web applications that are fast,
-                accessible, and delightful to use.
+                accessible, and visually striking.
               </p>
               <p>
-                My focus is on <span className="text-indigo-400 font-medium">React.js</span>, crafting
+                My focus is on <span className="text-white font-bold border-b-2 border-[#4f46e5]">React.js</span>, crafting
                 pixel-perfect UIs from designs, and obsessing over performance. I believe great software is
-                both technically sound and aesthetically beautiful.
+                both technically sound and aesthetically bold.
               </p>
               <p>
                 When I'm not shipping features, I'm exploring new patterns, contributing to open source,
@@ -80,18 +83,16 @@ export default function About() {
             </div>
 
             {/* Highlight chips */}
-            <div className="flex flex-wrap gap-2 mt-7">
+            <div className="flex flex-wrap gap-3 mt-8">
               {highlights.map(({ text }) => (
                 <span
                   key={text}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full glass border border-white/10 text-slate-300 text-xs font-medium hover:border-indigo-500/40 hover:text-indigo-300 transition-all duration-200"
+                  className="px-4 py-2 border-2 border-[#334155] bg-[#050505] text-slate-300 text-xs font-bold uppercase tracking-wide hover:border-[#4f46e5] hover:text-white transition-all duration-200 cursor-default"
                 >
                   {text}
                 </span>
               ))}
             </div>
-
-
 
             {/* Resume CTA */}
             <a
@@ -100,11 +101,10 @@ export default function About() {
               target="_blank"
               rel="noopener noreferrer"
               id="download-cv-btn"
-              className="inline-flex items-center gap-2.5 mt-8 px-6 py-3 rounded-full glass-strong border border-indigo-500/25 text-indigo-300 text-sm font-semibold hover:bg-indigo-500/10 hover:border-indigo-400/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all duration-300"
+              className="inline-flex items-center gap-3 mt-10 px-8 py-4 bg-[#4f46e5] border-2 border-[#4f46e5] text-white text-sm font-bold uppercase tracking-widest hover:-translate-y-1 transition-transform duration-200 shadow-[6px_6px_0px_#1e293b] hover:shadow-[8px_8px_0px_#1e293b]"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                <path strokeLinecap="square" strokeLinejoin="miter" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
               Download Résumé
             </a>
