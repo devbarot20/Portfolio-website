@@ -2,7 +2,7 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import profileImg from '../assets/profile.jpg';
 
 const highlights = [
-  { text: 'React & Next.js' },
+  { text: 'React & Redux' },
   { text: 'Pixel-perfect UI' },
   { text: 'Performance first' },
   { text: 'Accessibility' },
@@ -35,10 +35,10 @@ export default function About() {
 
             {/* avatar card */}
             <div className="relative z-10 w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-[#050505] border-4 border-[#1e293b] shadow-[12px_12px_0px_#4f46e5] overflow-hidden group">
-              <img 
-                src={profileImg} 
-                alt="Dev Barot" 
-                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110" 
+              <img
+                src={profileImg}
+                alt="Dev Barot"
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
               />
 
               {/* highlight pills inside card bottom */}
@@ -71,8 +71,9 @@ export default function About() {
             <div className="space-y-6 text-slate-400 leading-relaxed text-[1rem] font-medium">
               <p>
                 I'm <span className="text-white font-bold bg-[#1e293b] px-2">Dev Barot</span>, a passionate Frontend
-                Developer with 2+ years of experience building modern web applications that are fast,
+                Developer building modern web applications that are fast,
                 accessible, and visually striking.
+                Currently open to internship opportunities as a Frontend Developer.
               </p>
               <p>
                 My focus is on <span className="text-white font-bold border-b-2 border-[#4f46e5]">React.js</span>, crafting
@@ -82,6 +83,9 @@ export default function About() {
               <p>
                 When I'm not shipping features, I'm exploring new patterns, contributing to open source,
                 and writing about frontend development.
+              </p>
+              <p>
+                Currently, I am improving my problem-solving skills and exploring more advanced frontend concepts to become a better developer.
               </p>
             </div>
 

@@ -103,7 +103,7 @@ function ProjectCard({ id, title, description, tech, tag, accentColor, github, d
           </span>
         </a>
       </div>
-      
+
       {/* CSS dynamic hover injection */}
       <style>{`
         #project-card-${id}:hover {

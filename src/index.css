@@ -240,3 +240,65 @@ body {
   pointer-events: none;
   z-index: 0;
 }
+
+/* ─── Responsive Media Queries ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  /* Reduce hard shadows on small screens */
+  .glass, .glass-strong {
+    box-shadow: 2px 2px 0px rgba(30, 41, 59, 0.5);
+  }
+  
+  .glow, .glow-purple, .glow-emerald, .glow-sm {
+    box-shadow: 3px 3px 0px currentColor;
+  }
+  
+  .card-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px #4f46e5;
+  }
+
+  .btn-primary:hover, .btn-secondary:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px currentColor;
+  }
+  
+  /* Simplify animations on mobile to prevent horizontal scroll issues */
+  .reveal-left, .reveal-right {
+    transform: translateY(20px); 
+  }
+  
+  .reveal-left.in-view, .reveal-right.in-view {
+    transform: translateY(0);
+  }
+  
+  /* Reduce padding on mobile */
+  section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+  
+  .mesh-bg {
+    background-size: 16px 16px;
+  }
+  
+  /* Further reduce shadows */
+  .card-hover:hover {
+    box-shadow: 3px 3px 0px #4f46e5;
+  }
+}
