@@ -2,31 +2,31 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const projects = [
   {
-    id: 'portfolio',
-    title: 'Portfolio Website',
-    description: 'A modern personal portfolio showcasing projects and skills. Brutalist aesthetic with bold typography, solid colors, and responsive layout.',
-    tech: ['React', 'Tailwind CSS', 'Vite'],
-    tag: 'Personal',
-    accentColor: '#4f46e5',
-    github: 'https://github.com',
-    demo: 'https://portfolio-website-alpha-one-92.vercel.app/',
-  },
-  {
-    id: 'ecommerce',
-    title: 'E-Commerce UI',
-    description: 'Feature-rich e-commerce frontend with product listings, cart management, filters, and responsive checkout flow with modern UX patterns.',
-    tech: ['React', 'Redux', 'CSS Modules', 'REST API'],
-    tag: 'UI/UX',
+    id: 'herbhex',
+    title: 'HERBHEX',
+    description: 'Modern herbal skincare e-commerce platform focused on organic beauty products, smooth product browsing, responsive shopping experience, and clean UI with nature-inspired aesthetics.',
+    tech: ['React', 'Tailwind CSS', 'Redux', 'REST API'],
+    tag: 'SKINCARE',
     accentColor: '#10b981',
     github: 'https://github.com',
     demo: 'https://example.com',
   },
   {
-    id: 'todo',
-    title: 'To-Do App',
-    description: 'Productivity app with drag-and-drop task management, category filters, real-time updates, and local persistence via localStorage.',
-    tech: ['React', 'Context API', 'Tailwind CSS'],
-    tag: 'Productivity',
+    id: 'ai-finance',
+    title: 'AI FINANCE DASHBOARD',
+    description: 'Smart personal finance dashboard with expense tracking, AI-generated insights, budgeting analytics, interactive charts, and responsive data visualization for modern financial management.',
+    tech: ['React', 'Chart.js', 'Tailwind CSS', 'Context API'],
+    tag: 'AI/FINANCE',
+    accentColor: '#3b82f6',
+    github: 'https://github.com/devbarot20/AI-Powered-Personal-Finance-Dashboard-.git',
+    demo: 'https://ai-powered-personal-finance-dashboa-theta.vercel.app/',
+  },
+  {
+    id: 'ecommerce-app',
+    title: 'E-COMMERCE APPLICATION',
+    description: 'Feature-rich e-commerce frontend with product listings, category filters, shopping cart management, responsive layouts, and seamless user experience across all devices.',
+    tech: ['React', 'Redux', 'Tailwind CSS', 'REST API'],
+    tag: 'E-COMMERCE',
     accentColor: '#f59e0b',
     github: 'https://github.com',
     demo: 'https://example.com',
@@ -143,7 +143,7 @@ export default function Projects() {
 
         <div className={`reveal ${titleIn ? 'in-view' : ''} reveal-delay-4 mt-16 text-center`}>
           <a
-            href="https://github.com"
+            href="https://github.com/devbarot20?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             id="view-all-projects"
