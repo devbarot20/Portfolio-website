@@ -28,8 +28,8 @@ const projects = [
     tech: ['React', 'Redux', 'Tailwind CSS', 'REST API'],
     tag: 'E-COMMERCE',
     accentColor: '#f59e0b',
-    github: 'https://github.com',
-    demo: 'https://example.com',
+    github: 'https://github.com/devbarot20/Nexus_e-commerce.git',
+    demo: 'https://nexuse-commerce.vercel.app/',
   },
 ];
 
