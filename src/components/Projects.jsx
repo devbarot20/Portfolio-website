@@ -8,8 +8,8 @@ const projects = [
     tech: ['React', 'Tailwind CSS', 'Redux', 'REST API'],
     tag: 'SKINCARE',
     accentColor: '#10b981',
-    github: 'https://github.com',
-    demo: 'https://example.com',
+    github: 'https://github.com/devbarot20/Herbal-Skin-Care-Solution.git',
+    demo: 'https://herbal-skin-care-solution.vercel.app/',
   },
   {
     id: 'ai-finance',
