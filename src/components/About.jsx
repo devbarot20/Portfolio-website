@@ -103,7 +103,7 @@ export default function About() {
 
             {/* Resume CTA */}
             <a
-              href="https://drive.google.com/file/d/19PgUpk5SCpx8O4J2TK5Oab6w_9cv8x2E/view"
+              href="https://drive.google.com/file/d/1l_gGFmLzr242BIkwx_h9rk5PbjYXj_9X/view?usp=sharing"
               download="Dev_Barot_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
