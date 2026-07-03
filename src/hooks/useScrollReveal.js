@@ -16,7 +16,7 @@ export function useScrollReveal(options = {}) {
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true);
-          observer.unobserve(el); // fire once
+          observer.unobserve(el);
         }
       },
       { threshold: 0.12, ...options }
@@ -24,7 +24,7 @@ export function useScrollReveal(options = {}) {
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return { ref, inView };
 }
