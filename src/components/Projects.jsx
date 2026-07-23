@@ -3,7 +3,7 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 const projectImages = {
   herbhex: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=600&h=400&fit=crop&auto=format',
   'ai-finance': 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&auto=format',
-  'ecommerce-app': 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&auto=format',
+  'meal-planner': 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop&auto=format',
 };
 
 const projects = [
@@ -12,7 +12,7 @@ const projects = [
     title: 'HERBHEX',
     description: 'Modern herbal skincare e-commerce platform focused on organic beauty products, smooth product browsing, responsive shopping experience, and clean UI with nature-inspired aesthetics.',
     tech: ['React', 'Tailwind CSS', 'Redux', 'REST API'],
-    tag: 'SKINCARE',
+    tag: 'FULL STACK',
     accentColor: '#10b981',
     github: 'https://github.com/devbarot20/Herbal-Skin-Care-Solution.git',
     demo: 'https://herbal-skin-care-solution.vercel.app/',
@@ -22,20 +22,20 @@ const projects = [
     title: 'AI FINANCE DASHBOARD',
     description: 'Smart personal finance dashboard with expense tracking, AI-generated insights, budgeting analytics, interactive charts, and responsive data visualization for modern financial management.',
     tech: ['React', 'Chart.js', 'Tailwind CSS', 'Context API'],
-    tag: 'AI/FINANCE',
+    tag: 'FRONTEND HEAVY',
     accentColor: '#3b82f6',
     github: 'https://github.com/devbarot20/AI-Powered-Personal-Finance-Dashboard-.git',
     demo: 'https://ai-powered-personal-finance-dashboa-theta.vercel.app/',
   },
   {
-    id: 'ecommerce-app',
-    title: 'E-COMMERCE APPLICATION',
-    description: 'Feature-rich e-commerce frontend with product listings, category filters, shopping cart management, responsive layouts, and seamless user experience across all devices.',
-    tech: ['React', 'Redux', 'Tailwind CSS', 'REST API'],
-    tag: 'E-COMMERCE',
-    accentColor: '#f59e0b',
-    github: 'https://github.com/devbarot20/Nexus_e-commerce.git',
-    demo: 'https://nexuse-commerce.vercel.app/',
+    id: 'meal-planner',
+    title: 'MEAL PLANNER & RECIPE APP',
+    description: 'Full stack meal planning and recipe management app with personalised weekly meal schedules, rich recipe browsing, cloud-hosted food imagery via Cloudinary, secure REST API backend, and a smooth, responsive React interface.',
+    tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Cloudinary'],
+    tag: 'FULL STACK',
+    accentColor: '#f97316',
+    github: 'https://github.com/devbarot20/MealPlanner.git',
+    demo: 'https://meal-planner-virid-nu.vercel.app/login',
   },
 ];
 
@@ -57,7 +57,7 @@ function ProjectCard({ id, title, description, tech, tag, accentColor, github, d
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f111a] via-transparent to-transparent" />
-        
+
         {/* Tag on image */}
         <span className="absolute top-4 right-4 text-xs font-bold px-3 py-1 uppercase tracking-wider border-2 backdrop-blur-sm" style={{ borderColor: accentColor, color: accentColor, backgroundColor: `${accentColor}20` }}>
           {tag}
