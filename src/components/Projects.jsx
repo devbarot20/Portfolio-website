@@ -35,7 +35,7 @@ const projects = [
     tag: 'FULL STACK',
     accentColor: '#f97316',
     github: 'https://github.com/devbarot20/MealPlanner.git',
-    demo: 'https://meal-planner-virid-nu.vercel.app/login',
+    demo: 'https://my-mealplanner-app.vercel.app/',
   },
 ];
 
