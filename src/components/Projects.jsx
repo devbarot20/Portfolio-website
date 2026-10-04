@@ -1,12 +1,23 @@
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const projectImages = {
+  'documind-ai': 'https://images.unsplash.com/photo-1677442136019-21780649c20e?w=600&h=400&fit=crop&auto=format',
   herbhex: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=600&h=400&fit=crop&auto=format',
   'ai-finance': 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&auto=format',
   'meal-planner': 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop&auto=format',
 };
 
 const projects = [
+  {
+    id: 'documind-ai',
+    title: 'DOCUMIND AI',
+    description: 'AI-powered document analysis platform that extracts intelligent insights from PDFs and documents, featuring a clean responsive UI and fast document processing capabilities.',
+    tech: ['React', 'Tailwind CSS', 'AI / LLM'],
+    tag: 'AI APP',
+    accentColor: '#8b5cf6',
+    github: 'https://github.com/devbarot20/documind-ai.git',
+    demo: 'https://documind-ai-gamma.vercel.app/',
+  },
   {
     id: 'herbhex',
     title: 'HERBHEX',
