@@ -1,7 +1,7 @@
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const projectImages = {
-  'documind-ai': 'https://images.unsplash.com/photo-1677442136019-21780649c20e?w=600&h=400&fit=crop&auto=format',
+  'documind-ai': 'https://imgs.search.brave.com/pEBn2NU7CV8D-H3TSGYG-iSAhWUCmMhBL9FPRDWnhDA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aWlpdC5hYy5pbi93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMS8w/NC9WUUEyLnBuZw',
   herbhex: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=600&h=400&fit=crop&auto=format',
   'ai-finance': 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&auto=format',
   'meal-planner': 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop&auto=format',
