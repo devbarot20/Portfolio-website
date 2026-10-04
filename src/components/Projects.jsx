@@ -19,6 +19,16 @@ const projects = [
     demo: 'https://documind-ai-gamma.vercel.app/',
   },
   {
+    id: 'meal-planner',
+    title: 'MEAL PLANNER & RECIPE APP',
+    description: 'Full stack meal planning and recipe management app with personalised weekly meal schedules, rich recipe browsing, cloud-hosted food imagery via Cloudinary, secure REST API backend, and a smooth, responsive React interface.',
+    tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Cloudinary'],
+    tag: 'FULL STACK',
+    accentColor: '#f97316',
+    github: 'https://github.com/devbarot20/MealPlanner.git',
+    demo: 'https://my-mealplanner-app.vercel.app/',
+  },
+  {
     id: 'herbhex',
     title: 'HERBHEX',
     description: 'Modern herbal skincare e-commerce platform focused on organic beauty products, smooth product browsing, responsive shopping experience, and clean UI with nature-inspired aesthetics.',
@@ -38,16 +48,7 @@ const projects = [
     github: 'https://github.com/devbarot20/AI-Powered-Personal-Finance-Dashboard-.git',
     demo: 'https://ai-powered-personal-finance-dashboa-theta.vercel.app/',
   },
-  {
-    id: 'meal-planner',
-    title: 'MEAL PLANNER & RECIPE APP',
-    description: 'Full stack meal planning and recipe management app with personalised weekly meal schedules, rich recipe browsing, cloud-hosted food imagery via Cloudinary, secure REST API backend, and a smooth, responsive React interface.',
-    tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Cloudinary'],
-    tag: 'FULL STACK',
-    accentColor: '#f97316',
-    github: 'https://github.com/devbarot20/MealPlanner.git',
-    demo: 'https://my-mealplanner-app.vercel.app/',
-  },
+
 ];
 
 function ProjectCard({ id, title, description, tech, tag, accentColor, github, demo, delay, inView }) {
