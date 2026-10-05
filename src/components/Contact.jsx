@@ -34,7 +34,7 @@ const socials = [
   },
   {
     name: 'Email',
-    url: 'mailto:devbarot20@gmail.com',
+    url: 'mailto:devbarot2010@gmail.com',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -72,14 +72,36 @@ export default function Contact() {
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
-    setTimeout(() => {
-      setStatus('sent');
-      setForm({ name: '', email: '', message: '' });
-      setTimeout(() => setStatus('idle'), 4000);
-    }, 1600);
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/devbarot2010@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          _subject: "New contact form submission from your Portfolio!"
+        })
+      });
+
+      if (response.ok) {
+        setStatus('sent');
+        setForm({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus('idle'), 4000);
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus('idle');
+      alert("Failed to send the message. Please try again or email me directly.");
+    }
   };
 
   return (
