@@ -72,7 +72,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-slate-500 text-[0.9rem] font-medium leading-relaxed max-w-xs">
-              Frontend Developer crafting bold, performant, and accessible web experiences.
+              Full Stack Developer crafting bold, performant, and accessible web experiences.
             </p>
           </div>
 

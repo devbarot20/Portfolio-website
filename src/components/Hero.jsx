@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
-const roles = ['Frontend Developer', 'React Specialist', 'UI/UX Enthusiast', 'Open Source Contributor'];
+const roles = ['Full Stack Developer', 'React Specialist', 'UI/UX Enthusiast', 'Open Source Contributor'];
 
 // Static particles generated once outside component
 const particles = Array.from({ length: 40 }, (_, i) => ({
