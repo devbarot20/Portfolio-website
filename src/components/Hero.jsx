@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
-const roles = ['Full Stack Developer', 'React Specialist', 'UI/UX Enthusiast', 'Open Source Contributor'];
+const roles = ['Creative Developer', 'Full Stack Developer', 'UI/UX Designer', 'Open Source Contributor'];
 
 // Static particles generated once outside component
 const particles = Array.from({ length: 40 }, (_, i) => ({
@@ -150,9 +150,11 @@ export default function Hero() {
       {/* ── Floating tech labels ── */}
       <TechBadge label="React.js" delay={0} color="#4f46e5" style={{ top: '20%', left: '10%' }} />
       <TechBadge label="Tailwind" delay={1.2} color="#10b981" style={{ top: '28%', right: '8%' }} />
-      <TechBadge label="Vite"    delay={2.1} color="#f59e0b" style={{ bottom: '30%', left: '7%' }} />
+      <TechBadge label="Figma" delay={2.1} color="#f24e1e" style={{ bottom: '30%', left: '7%' }} />
       <TechBadge label="TypeScript" delay={0.8} color="#3b82f6" style={{ bottom: '20%', right: '10%' }} />
-      <TechBadge label="Next.js" delay={1.6} color="#9333ea" style={{ top: '50%', right: '3%' }} />
+      <TechBadge label="Photoshop" delay={1.6} color="#31a8ff" style={{ top: '50%', right: '3%' }} />
+      <TechBadge label="Illustrator" delay={0.5} color="#ff9a00" style={{ top: '40%', left: '3%' }} />
+      <TechBadge label="Canva" delay={2.5} color="#00c4cc" style={{ bottom: '40%', right: '5%' }} />
 
       {/* ── Content ── */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-10 text-center">

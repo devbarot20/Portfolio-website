@@ -2,78 +2,51 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const skillCategories = [
   {
-    title: 'Languages',
-    icon: '{ }',
+    title: 'Design & Prototyping',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      </svg>
+    ),
     bgBase: 'bg-[#0f111a]',
     border: 'border-[#1e293b]',
-    iconBg: 'bg-[#3b82f6]',
+    accent: '#f24e1e', // Figma orange-ish red
+    gradient: 'from-[#f24e1e] to-[#ff7262]',
+    skills: ['Figma', 'Photoshop', 'Illustrator', 'Canva', 'Wireframing', 'Prototyping', 'User Research'],
+  },
+  {
+    title: 'Frontend',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+    bgBase: 'bg-[#0f111a]',
+    border: 'border-[#1e293b]',
     accent: '#3b82f6',
     gradient: 'from-[#3b82f6] to-[#2563eb]',
-    skills: [
-      { name: 'HTML5',      level: 95 },
-      { name: 'CSS3',       level: 90 },
-      { name: 'JavaScript', level: 85 },
-      { name: 'TypeScript', level: 70 },
-    ],
+    skills: ['React.js', 'Tailwind CSS', 'TypeScript', 'HTML/CSS', 'Next.js', 'Vite', 'Framer Motion'],
   },
   {
-    title: 'Frameworks & Libraries',
-    icon: '<>',
+    title: 'Backend & Data',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+      </svg>
+    ),
     bgBase: 'bg-[#0f111a]',
     border: 'border-[#1e293b]',
-    iconBg: 'bg-[#4f46e5]',
-    accent: '#4f46e5',
-    gradient: 'from-[#4f46e5] to-[#6366f1]',
-    skills: [
-      { name: 'React.js',    level: 88 },
-      { name: 'Tailwind CSS',level: 92 },
-      { name: 'Node.js',     level: 72 },
-      { name: 'Express.js',  level: 75 },
-    ],
-  },
-  {
-    title: 'Tools & Platforms',
-    icon: '</>',
-    bgBase: 'bg-[#0f111a]',
-    border: 'border-[#1e293b]',
-    iconBg: 'bg-[#10b981]',
     accent: '#10b981',
     gradient: 'from-[#10b981] to-[#34d399]',
-    skills: [
-      { name: 'Git & GitHub', level: 88 },
-      { name: 'VS Code',      level: 95 },
-      { name: 'Figma',        level: 78 },
-      { name: 'REST APIs',    level: 82 },
-    ],
+    skills: ['Node.js', 'Express.js', 'REST APIs', 'MongoDB', 'PostgreSQL', 'GraphQL', 'Firebase'],
   },
 ];
 
 const tags = ['Responsive Design', 'Web Accessibility', 'Performance Optimization', 'SEO Basics', 'Agile/Scrum', 'Clean Code', 'Code Review', 'UI/UX Design'];
 
-function SkillBar({ name, level, inView, delay, accent }) {
-  return (
-    <div className={`reveal ${inView ? 'in-view' : ''} reveal-delay-${delay}`}>
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-2">
-          <span className="text-[0.9rem] font-bold text-slate-200 uppercase tracking-wide">{name}</span>
-        </div>
-        <span className="font-mono font-bold text-xs text-white px-2 py-0.5 border-2 border-[#1e293b] bg-[#050505]">{level}%</span>
-      </div>
-      <div className="h-4 w-full border-2 border-[#1e293b] bg-[#050505] overflow-hidden">
-        <div
-          className="h-full transition-all duration-1000 ease-out relative overflow-hidden"
-          style={{ width: inView ? `${level}%` : '0%', background: `linear-gradient(90deg, ${accent}, ${accent}dd)` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function SkillCard({ title, icon, bgBase, border, accent, gradient, skills, inView, cardDelay }) {
   return (
-    <div className={`reveal ${inView ? 'in-view' : ''} reveal-delay-${cardDelay} p-8 ${bgBase} border-2 ${border} relative overflow-hidden group hover:-translate-y-2 transition-all duration-300`} style={{ boxShadow: `4px 4px 0px rgba(30,41,59,0.5)` }}>
+    <div className={`reveal ${inView ? 'in-view' : ''} reveal-delay-${cardDelay} p-8 ${bgBase} border-2 ${border} relative overflow-hidden group hover:-translate-y-2 transition-all duration-300`} style={{ boxShadow: '4px 4px 0px rgba(30,41,59,0.5)' }}>
       
       {/* Hover gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-transparent to-transparent group-hover:to-[var(--hover-color)]/5 transition-all duration-500 pointer-events-none" style={{ '--hover-color': accent }} />
@@ -91,11 +64,26 @@ function SkillCard({ title, icon, bgBase, border, accent, gradient, skills, inVi
         <h3 className="font-black text-xl text-white uppercase tracking-tight">{title}</h3>
       </div>
 
-      <div className="space-y-5 relative z-10">
+      <div className="flex flex-wrap gap-3 relative z-10">
         {skills.map((skill, i) => (
-          <SkillBar key={skill.name} {...skill} inView={inView} delay={Math.min(i + 1, 6)} accent={accent} />
+          <span 
+            key={skill} 
+            className="px-3 py-1.5 border-2 border-[#1e293b] bg-[#050505] text-slate-300 text-xs font-bold uppercase tracking-wide hover:text-white transition-colors duration-200"
+            style={{
+               transitionDelay: `${i * 50}ms`
+            }}
+          >
+            {skill}
+          </span>
         ))}
       </div>
+      
+      <style>{`
+        .group:hover span {
+           border-color: ${accent}40;
+           box-shadow: 2px 2px 0px ${accent}40;
+        }
+      `}</style>
     </div>
   );
 }

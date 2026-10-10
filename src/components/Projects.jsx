@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import CaseStudyModal from './CaseStudyModal';
 
 const projectImages = {
   'documind-ai': 'https://imgs.search.brave.com/pEBn2NU7CV8D-H3TSGYG-iSAhWUCmMhBL9FPRDWnhDA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aWlpdC5hYy5pbi93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMS8w/NC9WUUEyLnBuZw',
@@ -51,7 +53,7 @@ const projects = [
 
 ];
 
-function ProjectCard({ id, title, description, tech, tag, accentColor, github, demo, delay, inView }) {
+function ProjectCard({ id, title, description, tech, tag, accentColor, github, demo, delay, inView, onOpenModal }) {
   return (
     <div
       id={`project-card-${id}`}
@@ -100,34 +102,21 @@ function ProjectCard({ id, title, description, tech, tag, accentColor, github, d
         </div>
 
         {/* Actions */}
-        <div className="flex gap-3 mt-auto">
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            id={`${id}-github-btn`}
-            className="flex-1 flex items-center justify-center gap-2 py-3 border-2 border-[#334155] hover:border-white text-sm font-bold text-slate-300 hover:text-white transition-all duration-200 uppercase tracking-wide bg-[#050505]"
+        <div className="flex mt-auto">
+          <button
+            onClick={onOpenModal}
+            id={`${id}-case-study-btn`}
+            className="w-full flex items-center justify-center gap-2 py-4 border-2 text-sm font-black text-white transition-all duration-300 uppercase tracking-widest hover:-translate-y-1 relative overflow-hidden group"
+            style={{ backgroundColor: accentColor, borderColor: accentColor, boxShadow: `4px 4px 0px rgba(255,255,255,0.1)` }}
           >
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-            </svg>
-            GitHub
-          </a>
-          <a
-            href={demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            id={`${id}-demo-btn`}
-            className="flex-1 flex items-center justify-center gap-2 py-3 border-2 text-sm font-bold text-white transition-all duration-200 uppercase tracking-wide hover:-translate-y-1"
-            style={{ backgroundColor: accentColor, borderColor: accentColor, boxShadow: `2px 2px 0px rgba(255,255,255,0.2)` }}
-          >
-            <span className="relative z-10 flex items-center gap-1.5">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
-                <path strokeLinecap="square" strokeLinejoin="miter" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            <span className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-in-out" />
+            <span className="relative z-10 flex items-center gap-2">
+              Read Case Study
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                <path strokeLinecap="square" strokeLinejoin="miter" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-              Live Demo
             </span>
-          </a>
+          </button>
         </div>
       </div>
 
@@ -145,6 +134,18 @@ function ProjectCard({ id, title, description, tech, tag, accentColor, github, d
 export default function Projects() {
   const { ref: titleRef, inView: titleIn } = useScrollReveal();
   const { ref: cardsRef, inView: cardsIn } = useScrollReveal();
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedProject(null), 300); // clear after animation
+  };
 
   return (
     <section id="projects" className="relative py-24 md:py-32 overflow-hidden bg-[#050505] border-t-2 border-[#1e293b]">
@@ -164,7 +165,7 @@ export default function Projects() {
 
         <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, i) => (
-            <ProjectCard key={project.id} {...project} delay={i + 1} inView={cardsIn} />
+            <ProjectCard key={project.id} {...project} delay={i + 1} inView={cardsIn} onOpenModal={() => handleOpenModal(project)} />
           ))}
         </div>
 
@@ -183,6 +184,12 @@ export default function Projects() {
           </a>
         </div>
       </div>
+      
+      <CaseStudyModal 
+        isOpen={isModalOpen} 
+        onClose={handleCloseModal} 
+        project={selectedProject} 
+      />
     </section>
   );
 }
