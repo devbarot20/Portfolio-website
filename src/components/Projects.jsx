@@ -138,7 +138,7 @@ export default function Projects() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = (project) => {
-    setSelectedProject(project);
+    setSelectedProject({ ...project, image: projectImages[project.id] });
     setIsModalOpen(true);
   };
 
